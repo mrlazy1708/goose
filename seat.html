@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <title>排排坐</title>
+</head>
+
+<body>
+    <div id="l1" class="line">
+        <div id="s1" class="seat">
+            <div id="l" class="stu"></div>
+            <div id="r" class="stu"></div>
+        </div>
+        <div id="s2" class="seat">
+            <div id="l" class="stu"></div>
+            <div id="r" class="stu"></div>
+        </div>
+        <div id="s3" class="seat">
+            <div id="l" class="stu"></div>
+            <div id="r" class="stu"></div>
+        </div>
+    </div>
+    <div id="l2" class="line">
+        <div id="s1" class="seat">
+            <div id="l" class="stu"></div>
+            <div id="r" class="stu"></div>
+        </div>
+        <div id="s2" class="seat">
+            <div id="l" class="stu"></div>
+            <div id="r" class="stu"></div>
+        </div>
+        <div id="s3" class="seat">
+            <div id="l" class="stu"></div>
+            <div id="r" class="stu"></div>
+        </div>
+    </div>
+    <div id="l3" class="line">
+        <div id="s1" class="seat">
+            <div id="l" class="stu"></div>
+            <div id="r" class="stu"></div>
+        </div>
+        <div id="s2" class="seat">
+            <div id="l" class="stu"></div>
+        </div>
+        <div id="s3" class="seat"></div>
+    </div>
+    <style>
+        div.line {
+            display: flex;
+            box-sizing: border-box;
+            width: 100%;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        div.seat {
+            display: flex;
+            border-left: solid 1px gray;
+            border-right: solid 1px gray;
+            width: 30%;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        div.stu {
+            width: 50%;
+            text-align: center;
+        }
+    </style>
+    <script>
+        ["Юрий", "Милюша", "Андрей", "Хинчин", "Леонид", "Татьяна", "Анна", "Наташа", "Клои", "Людмила", "Константин", "Алёна", "Фея", "Рэйвен", "Эхлимэ"]
+            .map((v) => [v, Math.random()]).sort((x, y) => x[1] - y[1]).map(([v]) => v)
+            .forEach((s, i) => document.querySelector(`#l${Math.ceil((i + 1) / 6)} > #s${Math.ceil((i % 6 + 1) / 2)} > #${i % 2 ? "r" : "l"}`).textContent = s);
+    </script>
+</body>
+
+</html>
